@@ -2,6 +2,8 @@
 
 api-key.ts
 
+environments
+
 # Compiled output
 /dist
 /tmp
