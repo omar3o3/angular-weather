@@ -26,24 +26,24 @@ export class CurrentWeatherComponent {
 
   currentWeatherLocation: string = 'Richmond County, New York, United States'
 
-  // ngOnInit() {
-  //     this.currentWeatherData['humidity'] = 63,
-  //     this.currentWeatherData['precipitationProbability'] = 0
-  //     this.currentWeatherData['temperature'] = 42.24,
-  //     this.currentWeatherData['temperatureApparent'] = 42.24,
-  //     this.currentWeatherData['windGust'] = 2.24,
-  //     this.currentWeatherData['cloudCover'] = 0
-  // }
-
   ngOnInit() {
-    this.weatherService.getCurrentWeather().subscribe(data => {
-      console.log(data.data.values)
-      this.currentWeatherData['humidity'] = data.data.values.humidity,
-      this.currentWeatherData['precipitationProbability'] = data.data.values.precipitationProbability,
-      this.currentWeatherData['temperature'] = data.data.values.temperature,
-      this.currentWeatherData['temperatureApparent'] = data.data.values.temperatureApparent,
-      this.currentWeatherData['windGust'] = data.data.values.windGust,
-      this.currentWeatherData['cloudCover'] = data.data.values.cloudCover
-    })
+      this.currentWeatherData['humidity'] = 63,
+      this.currentWeatherData['precipitationProbability'] = 0
+      this.currentWeatherData['temperature'] = 42.24,
+      this.currentWeatherData['temperatureApparent'] = 42.24,
+      this.currentWeatherData['windGust'] = 2.24,
+      this.currentWeatherData['cloudCover'] = 0
   }
+
+  // ngOnInit() {
+  //   this.weatherService.getCurrentWeather().subscribe(data => {
+  //     console.log(data.data.values)
+  //     this.currentWeatherData['humidity'] = data.data.values.humidity,
+  //     this.currentWeatherData['precipitationProbability'] = data.data.values.precipitationProbability,
+  //     this.currentWeatherData['temperature'] = data.data.values.temperature,
+  //     this.currentWeatherData['temperatureApparent'] = data.data.values.temperatureApparent,
+  //     this.currentWeatherData['windGust'] = data.data.values.windGust,
+  //     this.currentWeatherData['cloudCover'] = data.data.values.cloudCover
+  //   })
+  // }
 }

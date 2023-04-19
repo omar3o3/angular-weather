@@ -21,6 +21,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { CurrentWeatherComponent } from './components/current-weather/current-weather.component';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
+import { ForecastWeatherComponent } from './components/forecast-weather/forecast-weather.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { WeatherCardComponent } from './components/weather-card/weather-card.com
     AboutComponent,
     HomeComponent,
     CurrentWeatherComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
+    ForecastWeatherComponent
   ],
   imports: [
     BrowserModule,
