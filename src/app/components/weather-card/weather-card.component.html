@@ -1,0 +1,9 @@
+<div class="weather-card">
+    <h2>Current Weather for {{weatherLocation}}</h2>
+    <p>Humidity: {{weatherData['humidity']}}%</p>
+    <p>Chance of rain: {{weatherData['precipitationProbability']}}%</p>
+    <p>Temperature: {{weatherData['temperature']}} {{this.weatherUnit === 'imperial' ? '&deg;F' : '&deg;C'}}</p>
+    <p>Real feel: {{weatherData['temperatureApparent']}} {{this.weatherUnit === 'imperial' ? '&deg;F' : '&deg;C'}}</p>
+    <p>Wind Speed: {{weatherData['windGust']}} {{this.weatherUnit === 'imperial' ? 'mph' : 'kph'}}</p>
+    <p>Cloud coverage: {{weatherData['cloudCover']}}%</p>
+</div>

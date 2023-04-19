@@ -11,14 +11,29 @@ export class CurrentWeatherComponent {
 
   constructor(public weatherService: WeatherServiceService){}
 
-  currentWeatherData: WeatherData = {
-    'humidity': 0,
-    'precipitationProbability': 0,
-    'temperature': 0,
-    'temperatureApparent': 0,
-    'windGust': 0,
-    'cloudCover': 0
-  }
+  // currentWeatherData: WeatherData = {
+  //   'humidity': 0,
+  //   'precipitationProbability': 0,
+  //   'temperature': 0,
+  //   'temperatureApparent': 0,
+  //   'windGust': 0,
+  //   'cloudCover': 0
+  // }
+  currentWeatherData: WeatherData = {}
+
+
+  // weatherArray =  []
+
+  currentWeatherLocation: string = 'Richmond County, New York, United States'
+
+  // ngOnInit() {
+  //     this.currentWeatherData['humidity'] = 63,
+  //     this.currentWeatherData['precipitationProbability'] = 0
+  //     this.currentWeatherData['temperature'] = 42.24,
+  //     this.currentWeatherData['temperatureApparent'] = 42.24,
+  //     this.currentWeatherData['windGust'] = 2.24,
+  //     this.currentWeatherData['cloudCover'] = 0
+  // }
 
   ngOnInit() {
     this.weatherService.getCurrentWeather().subscribe(data => {
