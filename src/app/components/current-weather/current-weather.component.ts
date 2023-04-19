@@ -1,5 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { WeatherServiceService } from 'src/app/service/weather-service.service';
+import { WeatherData } from 'src/app/interfaces/weather-data';
 
 @Component({
   selector: 'app-current-weather',
@@ -10,12 +11,20 @@ export class CurrentWeatherComponent {
 
   constructor(public weatherService: WeatherServiceService){}
 
-  // this.weatherService.getCurrentWeather().subscribe(data => console.log(data))
-  // recieveCurrentWeather() {
-  //   this.weatherService.getCurrentWeather().subscribe(data => console.log(data))
-  // }
+  currentWeatherData!: WeatherData
 
   ngOnInit() {
-    this.weatherService.getCurrentWeather().subscribe(data => console.log(data))
+    this.weatherService.getCurrentWeather().subscribe(data => {
+      console.log(data.data.values.humidity)
+      // this.currentWeatherData['humidity'] = data.data.values.humidity,
+        // this.currentWeatherData['precipitationProbability'] = data.data.values.precipitationProbability,
+        // this.currentWeatherData['temperature'] = data.data.values.temperature,
+        // this.currentWeatherData['temperatureApparent'] = data.data.values.temperatureApparent,
+        // this.currentWeatherData['windGust'] = data.data.values.windGust,
+        // this.currentWeatherData['cloudCover'] = data.data.values.cloudCover
+    })
+  //   this.weatherService.getCurrentWeather().subscribe(data => {
+  //   console.log(data.data.values)})
+    // console.log(this.currentWeatherData)
   }
 }
