@@ -1,0 +1,51 @@
+<!-- <form [formGroup]="weatherFormInput" (ngSubmit)="onSubmit()">
+    <div class="form-container">
+        <div class="home-text">
+            <h1>Welcome to angular skies!</h1>
+            <h1>Please provide your zip code and the units you prefer to get started</h1>
+        </div>
+        <div class="form-fields">
+            <mat-form-field >
+                <mat-label for="zip-code">Zip Code</mat-label>
+                <input matInput type="number" required formControlName="zipCode" id="zipCode">
+            </mat-form-field>
+        </div>
+        <div class="form-fields">
+            <mat-form-field>
+                <mat-label for="unit">Units</mat-label>
+                <mat-select name="units" required formControlName="unit" id="unit">
+                    <mat-option value="metric">Metric</mat-option>
+                    <mat-option value="imperial">Imperial</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+    </div>
+</form> -->
+
+
+<!-- <form [formGroup]="weatherFormInput" (ngSubmit)="onSubmit()"> -->
+<form (ngSubmit)="onSubmit()">
+    <div class="form-container">
+      <div class="home-text">
+        <h1>Welcome to angular skies!</h1>
+        <h1>Please provide your zip code and the units you prefer to get started</h1>
+      </div>
+      <div class="form-fields">
+        <label for="zipCode">Zip Code</label>
+        <!-- <input type="number" required formControlName="zipCode" id="zipCode"> -->
+        <input [(ngModel)]="zipCode" type="number" name="zipCode" required id="zipCode">
+      </div>
+      <div class="form-fields">
+        <label for="unit">Units</label>
+        <!-- <select name="unit" required formControlName="unit" id="unit"> -->
+        <select [(ngModel)]="unit" name="unit" required id="unit">
+          <option value="" disabled selected>Select Unit</option>
+          <option value="metric">Metric</option>
+          <option value="imperial">Imperial</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-button">Submit</button>
+    </div>
+  </form>
+  
