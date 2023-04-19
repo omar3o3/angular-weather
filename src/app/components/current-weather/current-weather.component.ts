@@ -11,20 +11,24 @@ export class CurrentWeatherComponent {
 
   constructor(public weatherService: WeatherServiceService){}
 
-  currentWeatherData!: WeatherData
+  currentWeatherData: WeatherData = {
+    'humidity': 0,
+    'precipitationProbability': 0,
+    'temperature': 0,
+    'temperatureApparent': 0,
+    'windGust': 0,
+    'cloudCover': 0
+  }
 
   ngOnInit() {
     this.weatherService.getCurrentWeather().subscribe(data => {
-      console.log(data.data.values.humidity)
-      // this.currentWeatherData['humidity'] = data.data.values.humidity,
-        // this.currentWeatherData['precipitationProbability'] = data.data.values.precipitationProbability,
-        // this.currentWeatherData['temperature'] = data.data.values.temperature,
-        // this.currentWeatherData['temperatureApparent'] = data.data.values.temperatureApparent,
-        // this.currentWeatherData['windGust'] = data.data.values.windGust,
-        // this.currentWeatherData['cloudCover'] = data.data.values.cloudCover
+      console.log(data.data.values)
+      this.currentWeatherData['humidity'] = data.data.values.humidity,
+      this.currentWeatherData['precipitationProbability'] = data.data.values.precipitationProbability,
+      this.currentWeatherData['temperature'] = data.data.values.temperature,
+      this.currentWeatherData['temperatureApparent'] = data.data.values.temperatureApparent,
+      this.currentWeatherData['windGust'] = data.data.values.windGust,
+      this.currentWeatherData['cloudCover'] = data.data.values.cloudCover
     })
-  //   this.weatherService.getCurrentWeather().subscribe(data => {
-  //   console.log(data.data.values)})
-    // console.log(this.currentWeatherData)
   }
 }

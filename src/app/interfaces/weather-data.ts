@@ -1,8 +1,8 @@
 export interface WeatherData{
-    humidity: number,
-    precipitationProbability: number,
+    humidity?: number,
+    precipitationProbability?: number,
     temperature: number,
-    temperatureApparent: number,
-    windGust: number,
-    cloudCover: number,
+    temperatureApparent?: number,
+    windGust?: number,
+    cloudCover?: number,
 }
