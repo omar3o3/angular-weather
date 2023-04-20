@@ -1,10 +1,20 @@
-<div class="weather-card">
-    <!-- <h2>Current Weather for {{weatherLocation}}</h2> -->
-    <p>Humidity: {{weatherData['humidity']}}%</p>
+<!-- <p>Humidity: {{weatherData['humidity']}}%</p> -->
+<!-- <div class="weather-card">
     <p>Chance of rain: {{weatherData['precipitationProbability']}}%</p>
     <p>Temperature: {{weatherData['temperature']}} {{this.weatherUnit === 'imperial' ? '&deg;F' : '&deg;C'}}</p>
     <p>Real feel: {{weatherData['temperatureApparent']}} {{this.weatherUnit === 'imperial' ? '&deg;F' : '&deg;C'}}</p>
     <p>Wind Speed: {{weatherData['windGust']}} {{this.weatherUnit === 'imperial' ? 'mph' : 'kph'}}</p>
     <p>Cloud coverage: {{weatherData['cloudCover']}}%</p>
+</div> -->
+
+
+<!-- <h2>Current Weather for {{weatherLocation}}</h2> -->
+<div class="weather-card">
+    <p>Humidity: {{parent === 'parent1' ? weatherData['humidity'] : weatherData['values']['humidity']}}%</p>
+    <p>Chance of rain: {{parent === 'parent1' ? weatherData['precipitationProbability'] : weatherData['values']['precipitationProbability']}}%</p>
+    <p>Temperature: {{parent === 'parent1' ? weatherData['temperature'] : weatherData['values']['temperature']}} {{this.weatherUnit === 'imperial' ? '&deg;F' : '&deg;C'}}</p>
+    <p>Real feel: {{parent === 'parent1' ? weatherData['temperatureApparent'] : weatherData['values']['temperatureApparent']}} {{this.weatherUnit === 'imperial' ? '&deg;F' : '&deg;C'}}</p>
+    <p>Wind Speed: {{parent === 'parent1' ? weatherData['windGust'] : weatherData['values']['windSpeed']}} {{this.weatherUnit === 'imperial' ? 'mph' : 'kph'}}</p>
+    <p>Cloud coverage: {{parent === 'parent1' ? weatherData['cloudCover'] : weatherData['values']['cloudCover']}}%</p>
 </div>
-<!-- <div>{{weatherData}}</div> -->
+

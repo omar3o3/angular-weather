@@ -68,7 +68,7 @@ export class WeatherServiceService {
       "cloudCover"
     ];
     const timesteps = ['1h'];
-    const units = "imperial";
+    const stringUnit: string | null = localStorage.getItem("unit")
   
     return this.getLongLatFromZip().pipe(
       switchMap((location: any) => {
@@ -81,7 +81,7 @@ export class WeatherServiceService {
           'timesteps': timesteps,
           'startTime': past_time.toISOString(),
           'endTime': end_time.toISOString(),
-          'units': units
+          'units': stringUnit
         };
         const headers = {
           'Accept-Encoding': 'gzip',

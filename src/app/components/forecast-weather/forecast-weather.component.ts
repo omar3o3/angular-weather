@@ -15,6 +15,7 @@ export class ForecastWeatherComponent {
 
   // mockForecastdata = mockForecast
   mockForecastdata = mockForecast.data.timelines[0].intervals
+  parent2 = 'parent2'
 
   // forecastData = mockForecast.data.timelines.intervals
   // currentWeatherData: WeatherData = {}
@@ -26,6 +27,7 @@ export class ForecastWeatherComponent {
     // this.weatherService.getForecastData().subscribe(data => console.log(data))
     this.weatherService.getForecastData().subscribe(data => {
       console.log(data);
+      this.weatherService = data.timelines[0].intervals
     });
   }
 }
