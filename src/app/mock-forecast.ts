@@ -1,4 +1,4 @@
-export const mockForecast = [
+export const mockForecast =
     {
         "data": {
           "timelines": [
@@ -182,4 +182,3 @@ export const mockForecast = [
         }
       }
       
-]

@@ -1,1 +1,3 @@
-<p>forecast-weather works!</p>
+<span *ngFor="let data of mockForecastdata">
+    <app-weather-card [weatherData] = "data.values"/>
+</span>

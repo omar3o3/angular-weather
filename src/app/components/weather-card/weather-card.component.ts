@@ -19,5 +19,6 @@ export class WeatherCardComponent {
   
   ngOnInit() {
     this.weatherUnit = this.weatherService.getLocalStorage['unit']
+    // console.log(this.weatherData)
   }
 }
